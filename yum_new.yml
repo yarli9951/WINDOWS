@@ -1,0 +1,16 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+    - debug: msg="{{ lookup('env','PATH') }} is the value"
+    - name: Install yum repo
+      yum: 
+         name: httpd
+         state: present
+    - name: Action htppd
+      command: echo "hello how are you"
+      notify: Restart HTTPD
+  handlers:
+    - name: Restart HTTPD
+      action: service name=httpd state=restarted
+    - name: Lookup
+      debug: msg="{{ lookup('env' , 'EC2_HOME') }}"

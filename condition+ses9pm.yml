@@ -1,0 +1,8 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+      - name: Ubuntu install
+        command: apt-get update
+        when: ansible_os_family == "Debian"  
+      - name: setup module
+        command: ansible all -m setup

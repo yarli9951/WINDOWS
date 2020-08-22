@@ -1,0 +1,8 @@
+- hosts: QA
+  sudo: yes
+  vars_files:
+   - vars1.yml
+  tasks:
+    - name: Install yum {{ Name }}
+      service: state=installed
+

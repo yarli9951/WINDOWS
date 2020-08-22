@@ -1,0 +1,10 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+      - name: This is a condition
+        command: apt-get -y install httpd
+        when: ansible_os_family == "Debian"
+      - name: This is a condition
+        command: ls -lrt
+        when: ansible_os_family == "RedHat"
+

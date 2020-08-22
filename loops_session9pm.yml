@@ -1,0 +1,9 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+      - name: create users
+        command: useradd {{ item }}
+        with_items:
+        - dev1
+        - dev2
+

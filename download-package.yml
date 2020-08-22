@@ -1,0 +1,11 @@
+- hosts: QA
+  tasks:
+   - name: download the package
+     get_url: 
+         url: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.57/bin/apache-tomcat-8.5.57.tar.gz
+         dest: /tmp/tomcat/
+         mode: 0777
+   - name: unarchive of targz file
+     unarchive:
+             src: /tmp/tomcat/apache-tomcat-8.5.57.tar.gz
+             dest: /tmp/tomcat/    

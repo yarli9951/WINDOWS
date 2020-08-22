@@ -1,0 +1,8 @@
+- hosts: ec2-user@3.128.27.196
+  sudo: yes
+  tasks:
+  - name: Install httpd       
+    action: yum name=httpd state=removed
+  - name: Start httpd
+    service: name=httpd state=stopped
+      

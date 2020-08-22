@@ -1,0 +1,15 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+      - name: This is yum install script
+        yum:
+           name: httpd
+           state: installed
+      - name: TO start httpd
+        service: 
+            name: httpd 
+            state: stopped
+      - name: To stop jenkins
+        service:
+            name: jenkins
+            state: started

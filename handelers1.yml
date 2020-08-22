@@ -1,0 +1,10 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+     - name: HTTP stop
+       command: service httpd stop
+       notify: HTTP start
+  handlers:
+          - name: HTTP start
+            command: service httpd start
+

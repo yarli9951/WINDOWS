@@ -1,0 +1,10 @@
+- hosts: QA
+  sudo: yes
+  vars_prompt:
+          - name: pkgtoinstall
+            prompt: Install which package ?
+            default: telnet
+            private: no
+  tasks:
+          - name: install package
+            command: echo "{{ pkgtoinstall }}"
