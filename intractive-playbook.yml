@@ -6,5 +6,5 @@
             default: telnet
             private: no
   tasks:
-          - name: install package
+          - name: install package "{{ pkgtoinstall }}"
             command: echo "{{ pkgtoinstall }}"

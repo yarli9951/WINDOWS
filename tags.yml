@@ -1,0 +1,16 @@
+- hosts: QA
+  sudo: yes
+  tasks:
+      - name: create a folder
+        command: mkdir ~/test_tag
+        ignore_errors: yes
+        tags:
+            - directory
+      - name: create a file
+        command: touch ~/file1.txt
+        tags:
+            - file
+      - name: httpd status
+        command: service httpd status
+        ignore_errors: yes
+

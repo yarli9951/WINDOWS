@@ -1,6 +1,7 @@
 - hosts: QA
   sudo: Yes
   tasks:
+     - include_tasks: include.yml
      - name: Stop httpd service
        action: service name=httpd state=stopped
      - name: Start httpd service
