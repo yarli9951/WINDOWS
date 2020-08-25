@@ -1,3 +1,3 @@
-These are ansible scripts
+These are ansible course
 
 this is ansible repo
