@@ -1,0 +1,13 @@
+- hosts: UAT
+  tasks:
+       - name: Docker STOP
+         command: "ls ~/helm"
+         ignore_errors: yes
+       - name: Delete file
+         command: echo "file helm need to be present"
+         notify: create file
+  handlers:
+         - name: create file 
+           command: touch ~/helm
+           
+             
