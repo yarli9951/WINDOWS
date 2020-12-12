@@ -1,0 +1,8 @@
+- hosts: UAT
+  tasks:
+     - block:
+          - name: This is first task
+            command: "ls ~/helm"
+       rescue:
+          - debug:
+                msg= "This is rescue" 
